@@ -1,61 +1,101 @@
 import Head from 'next/head';
+import tw from 'tailwind-styled-components';
+
+const Page = tw.div`
+  flex flex-col items-center justify-center
+  min-h-screen
+  py-2
+`;
+
+const Main = tw.main`
+  flex flex-col items-center justify-center flex-1
+  px-20
+  text-center
+`;
+
+const Footer = tw.footer`
+  flex items-center justify-center
+  w-full h-24
+  border-t
+`;
+
+const Title = tw.h1`
+  text-6xl font-bold
+`;
+
+const Subtitle = tw.p`
+  mt-3 text-2xl
+`;
+
+const Link = tw.a`
+  text-blue-600
+`;
+
+const Code = tw.code`
+  p-3 font-mono text-lg bg-gray-100 rounded-md
+`;
+
+const CardsContainer = tw.div`
+  flex flex-wrap items-center justify-center
+  max-w-4xl mt-6 sm:w-full
+`;
+
+const LinkCard = tw.a`
+  p-6 m-3 text-left border w-96 rounded-xl
+  hover:text-blue-600 hover:shadow-xl
+  focus:text-blue-600
+  transition
+`;
+
+const LinkCardTitle = tw.h3`
+  text-2xl font-bold
+`;
+
+const LinkCardDescription = tw.p`
+  mt-4 text-xl
+`;
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <Page>
       <Head>
-        <title>Create Next App</title>
+        <title>NextStarter | Kraftend</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col items-center justify-center flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
+      <Main>
+        <Title>
+          Welcome to <Link href="https://nextjs.org">Next.js!</Link>
+        </Title>
 
-        <p className="mt-3 text-2xl">
-          Get started by editing <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">pages/index.js</code>
-        </p>
+        <Subtitle>
+          Get started by editing <Code>pages/index.js</Code>
+        </Subtitle>
 
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">Find in-depth information about Next.js features and API.</p>
-          </a>
+        <CardsContainer>
+          <LinkCard href="https://nextjs.org/docs">
+            <LinkCardTitle>Documentation &rarr;</LinkCardTitle>
+            <LinkCardDescription>Find in-depth information about Next.js features and API.</LinkCardDescription>
+          </LinkCard>
 
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+          <LinkCard href="https://nextjs.org/learn">
+            <LinkCardTitle>Learn &rarr;</LinkCardTitle>
+            <LinkCardDescription>Learn about Next.js in an interactive course with quizzes!</LinkCardDescription>
+          </LinkCard>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+          <LinkCard href="https://github.com/vercel/next.js/tree/master/examples">
+            <LinkCardTitle>Examples &rarr;</LinkCardTitle>
+            <LinkCardDescription>Discover and deploy boilerplate example Next.js projects.</LinkCardDescription>
+          </LinkCard>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">Instantly deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
-        </div>
-      </main>
+          <LinkCard href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app">
+            <LinkCardTitle>Deploy &rarr;</LinkCardTitle>
+            <LinkCardDescription>Instantly deploy your Next.js site to a public URL with Vercel.</LinkCardDescription>
+          </LinkCard>
+        </CardsContainer>
+      </Main>
 
-      <footer className="flex items-center justify-center w-full h-24 border-t">
+      <Footer>
         <a
           className="flex items-center justify-center"
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
@@ -64,7 +104,7 @@ export default function Home() {
         >
           Powered by <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
         </a>
-      </footer>
-    </div>
+      </Footer>
+    </Page>
   );
 }
