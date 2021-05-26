@@ -1,5 +1,9 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { SWRConfig } from 'swr';
+import { AnimateSharedLayout } from 'framer-motion';
+
+import { fetcher } from '@/lib/fetcher';
 
 import '@/styles/globals.css';
 import '@/styles/fonts.css';
@@ -12,7 +16,11 @@ function App({ Component, pageProps }: AppProps) {
         <meta charSet="utf-8" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps} />
+      <SWRConfig value={{ fetcher }}>
+        <AnimateSharedLayout>
+          <Component {...pageProps} />
+        </AnimateSharedLayout>
+      </SWRConfig>
     </>
   );
 }
