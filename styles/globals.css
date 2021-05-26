@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /*
+    ::selection {
+        color: theme('colors.white');
+        background: theme('colors.black');
+    }
+    */
+}
