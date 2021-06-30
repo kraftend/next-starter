@@ -6,7 +6,6 @@ import { AnimateSharedLayout } from 'framer-motion';
 import { fetcher } from '@/lib/fetcher';
 
 import '@/styles/globals.css';
-import '@/styles/fonts.css';
 
 function App({ Component, pageProps }: AppProps) {
   return (
