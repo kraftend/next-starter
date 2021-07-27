@@ -2,7 +2,7 @@ module.exports = {
   plugins: {
     tailwindcss: {},
     'postcss-flexbugs-fixes': {},
-    'postcss-100vh-fix': {},
+    'postcss-viewport-height-correction': {},
     'postcss-hover-media-feature': {},
     autoprefixer: {},
   },
