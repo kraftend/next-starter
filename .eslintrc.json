@@ -1,11 +1,10 @@
 {
     "extends": [
-        "plugin:@next/next/recommended",
-        "plugin:prettier/recommended"
+      "next/core-web-vitals",
+      "plugin:prettier/recommended"
     ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "requireConfigFile": false,
-        "sourceType": "module"
+    "rules": {
+      "react/display-name": "off"
     }
-}
+  }
+  
