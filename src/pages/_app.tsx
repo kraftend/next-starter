@@ -4,10 +4,12 @@ import Head from 'next/head';
 import Script from 'next/script';
 import { AnimateSharedLayout } from 'framer-motion';
 import { ChakraProvider } from '@chakra-ui/react';
+import { DefaultSeo } from 'next-seo';
 
 import { GA_TRACKING_ID, initAnalytics, useRouterTrackingForAnalytics } from '@/lib/analytics';
 import theme from '@/styles/theme';
 import Layout from '@/components/layout';
+import SEOConfig from '../../seo.config';
 
 import '@fontsource/inter/variable.css';
 
@@ -33,6 +35,7 @@ function App({ Component, pageProps }: AppProps) {
       <ChakraProvider theme={theme}>
         <AnimateSharedLayout>
           <Layout>
+            <DefaultSeo {...SEOConfig} />
             <Component {...pageProps} />
           </Layout>
         </AnimateSharedLayout>
